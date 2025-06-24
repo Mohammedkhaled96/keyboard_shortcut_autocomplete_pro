@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keyboard Shortcut Autocomplete Pro - NVDA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #0055ff;
+      --secondary: #f9f9f9;
+      --bg: #ffffff;
+      --text: #1c1c1c;
+      --highlight: #e6f0ff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 40px;
+    }
+    h1, h2, h3 {
+      color: var(--primary);
+      margin-top: 30px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 40px;
+    }
+    h3 {
+      font-size: 1.3rem;
+      margin-top: 25px;
+    }
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    code {
+      background: var(--highlight);
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: var(--highlight);
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    .hero {
+      background: var(--highlight);
+      padding: 20px;
+      border-left: 6px solid var(--primary);
+      margin-bottom: 30px;
+    }
+    .email {
+      font-weight: bold;
+      color: var(--primary);
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+      color: #555;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1>Keyboard Shortcut Autocomplete Professional for NVDA</h1>
+      <p><strong>Version:</strong> 1.1.1</p>
+      <p><strong>Author:</strong> Mohammed Khaled Mahmoud &lt;<span class="email">mohammed.khaled.mahmoud1996@gmail.com</span>&gt;</p>
+      <p><strong>License:</strong> GNU GPL v2</p>
+    </div>
+
+    <h2>Description</h2>
+    <p>Keyboard Shortcut Autocomplete Professional is a powerful text expansion addon for NVDA that significantly enhances your typing productivity. Define custom abbreviations and expand them instantly into full text, saving time and reducing typing errors.</p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li><strong>Smart Text Expansion</strong>: Convert abbreviations into full text with a simple keystroke</li>
+      <li><strong>Professional Manager Interface</strong>: Intuitive dialog with search, import/export capabilities</li>
+      <li><strong>Multi-language Support</strong>: Works seamlessly with English, Arabic, and other languages</li>
+      <li><strong>Live Expansion Hints</strong>: Get real-time suggestions while typing</li>
+      <li><strong>Undo Functionality</strong>: Easily revert expansions if needed</li>
+      <li><strong>Thread-Safe Operation</strong>: Reliable performance even under heavy use</li>
+      <li><strong>Customizable Shortcuts</strong>: Create unlimited text shortcuts tailored to your needs</li>
+    </ul>
+
+    <h2>Installation</h2>
+    <ol>
+      <li>Download the latest <code>.nvda-addon</code> file</li>
+      <li>Open the file with NVDA running</li>
+      <li>Follow the installation prompts</li>
+      <li>Restart NVDA to activate the addon</li>
+    </ol>
+
+    <h2>Quick Start Guide</h2>
+    <h3>Basic Usage</h3>
+    <ul>
+      <li><strong>Expand a shortcut</strong>: Type your abbreviation and press <code>NVDA+E</code></li>
+      <li><strong>Open manager</strong>: Press <code>NVDA+Shift+K</code></li>
+      <li><strong>Toggle addon</strong>: Press <code>NVDA+Alt+Shift+K</code></li>
+    </ul>
+
+    <h3>Example Shortcuts</h3>
+    <ul>
+      <li><code>ty</code> → "thank you"</li>
+      <li><code>brb</code> → "be right back"</li>
+      <li><code>asap</code> → "as soon as possible"</li>
+      <li><code>ISA</code> → "In Shaa Allah"</li>
+      <li><code>moh@</code> → "mohammed.khaled.mahmoud1996@gmail.com"</li>
+    </ul>
+
+    <h2>Complete Keyboard Commands</h2>
+    <table>
+      <tr><th>Command</th><th>Key</th><th>Description</th></tr>
+      <tr><td>Expand Shortcut</td><td>NVDA+E</td><td>Expands the abbreviation at cursor position</td></tr>
+      <tr><td>Open Manager</td><td>NVDA+Shift+K</td><td>Opens the shortcuts management dialog</td></tr>
+      <tr><td>Toggle Addon</td><td>NVDA+Alt+Shift+K</td><td>Enables or disables the addon</td></tr>
+      <tr><td>Undo Expansion</td><td>NVDA+Shift+E</td><td>Reverts the last text expansion</td></tr>
+      <tr><td>Show Shortcut Info</td><td>NVDA+Shift+S</td><td>Checks if word at cursor is a shortcut</td></tr>
+      <tr><td>List All Shortcuts</td><td>NVDA+Shift+L</td><td>Displays a quick list of all shortcuts</td></tr>
+    </table>
+
+    <h2>Manager Dialog Shortcuts</h2>
+    <table>
+      <tr><th>Command</th><th>Key</th><th>Description</th></tr>
+      <tr><td>Add New</td><td>Ctrl+A</td><td>Add a new shortcut</td></tr>
+      <tr><td>Edit</td><td>F2 or Enter</td><td>Edit selected shortcut</td></tr>
+      <tr><td>Delete</td><td>Delete</td><td>Remove selected shortcut</td></tr>
+      <tr><td>Search</td><td>Alt+S</td><td>Focus search field</td></tr>
+    </table>
+
+    <h2>Advanced Features</h2>
+    <h3>Import/Export</h3>
+    <p>Backup and share your shortcuts:</p>
+    <ol>
+      <li>Open the manager (<code>NVDA+Shift+K</code>)</li>
+      <li>Click "Export" to save shortcuts to a JSON file</li>
+      <li>Click "Import" to load shortcuts from a file</li>
+    </ol>
+
+    <h3>Special Characters</h3>
+    <ul>
+      <li><code>\n</code> for new lines</li>
+      <li><code>\t</code> for tabs</li>
+    </ul>
+
+    <h3>Creating Effective Shortcuts</h3>
+    <p><strong>Best Practices:</strong></p>
+    <ul>
+      <li>Keep shortcuts short and memorable</li>
+      <li>Avoid common words to prevent accidental expansion</li>
+      <li>Use consistent patterns (e.g., all email shortcuts end with @)</li>
+      <li>Group related shortcuts with prefixes</li>
+    </ul>
+    <p><strong>Examples:</strong></p>
+    <ul>
+      <li>Email signatures: <code>sig1</code>, <code>sig2</code>, <code>sigwork</code></li>
+      <li>Addresses: <code>addr1</code>, <code>addr2</code></li>
+      <li>Phone numbers: <code>ph1</code>, <code>ph2</code></li>
+      <li>Templates: <code>tpl1</code>, <code>tpl2</code></li>
+    </ul>
+
+    <h2>Troubleshooting</h2>
+    <h3>Shortcut not expanding?</h3>
+    <ul>
+      <li>Ensure the addon is enabled (<code>NVDA+Alt+Shift+K</code>)</li>
+      <li>Check if you're in an editable text field</li>
+      <li>Verify the shortcut exists in the manager</li>
+    </ul>
+
+    <h3>Manager dialog not opening?</h3>
+    <ul>
+      <li>Ensure no other NVDA dialog is open</li>
+      <li>Try restarting NVDA</li>
+      <li>Check NVDA's log for errors</li>
+    </ul>
+
+    <h3>Expansion in wrong place?</h3>
+    <ul>
+      <li>Make sure cursor is right after the shortcut</li>
+      <li>Don't have spaces or punctuation between shortcut and cursor</li>
+    </ul>
+
+    <h2>Supported Applications</h2>
+    <ul>
+      <li>Microsoft Office (Word, Outlook, Excel)</li>
+      <li>Web browsers (Chrome, Firefox, Edge)</li>
+      <li>Text editors (Notepad++, VS Code)</li>
+      <li>Email clients</li>
+      <li>Social media applications</li>
+      <li>Chat applications</li>
+    </ul>
+
+    <h2>Privacy & Data</h2>
+    <ul>
+      <li>All shortcuts are stored locally on your computer</li>
+      <li>No data is sent to external servers</li>
+      <li>Configuration file location: <code>%APPDATA%\nvda\keyboardShortcutsPro.json</code></li>
+    </ul>
+
+    <h2>Contributing</h2>
+    <p>Found a bug or have a suggestion? Please visit:<br/>
+    <a href="https://github.com/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro" target="_blank">github.com/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro</a></p>
+
+    <h2>Changelog</h2>
+    <h3>Version 1.1.1 (2025)</h3>
+    <ul>
+      <li>Complete rewrite with professional interface</li>
+      <li>Added search functionality in manager</li>
+      <li>Import/Export capabilities</li>
+      <li>Live expansion hints</li>
+      <li>Undo functionality</li>
+      <li>Thread-safe operations</li>
+      <li>Enhanced error handling</li>
+      <li>Improved text expansion reliability</li>
+    </ul>
+
+    <h3>Version 1.0.0 (2024)</h3>
+    <ul>
+      <li>Initial release</li>
+      <li>Basic text expansion</li>
+      <li>Simple shortcuts manager</li>
+    </ul>
+
+    <h2>Acknowledgments</h2>
+    <p>Special thanks to the NVDA community for their continuous support and feedback.</p>
+
+    <h2>License</h2>
+    <p>This addon is licensed under GNU General Public License v2.<br/>
+    For full license text, visit: <a href="https://www.gnu.org/licenses/gpl-2.0.html" target="_blank">https://www.gnu.org/licenses/gpl-2.0.html</a></p>
+
+    <div class="footer">
+      <p>For support, feature requests, or bug reports, please contact:<br/>
+      <span class="email">mohammed.khaled.mahmoud1996@gmail.com</span></p>
+    </div>
+  </div>
+</body>
+</html>
