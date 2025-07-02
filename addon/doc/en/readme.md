@@ -29,7 +29,7 @@ Keyboard Shortcut Autocomplete Professional is a powerful text expansion addon f
 
 ### Basic Usage
 
-1. **Expand a shortcut**: Type your abbreviation and press `NVDA+E`
+1. **Expand a shortcut**: Type your abbreviation, select abbreviation and press `NVDA+E`
 2. **Open manager**: Press `NVDA+Shift+K` to add, edit, or delete shortcuts
 3. **Toggle addon**: Press `NVDA+Alt+Shift+K` to enable/disable
 
