@@ -51,7 +51,7 @@ Perfect for:
 • Productivity enhancement
 • Reducing typing effort and errors"""),
     # version
-    "addon_version": "1.1.1",
+    "addon_version": "1.1.2",
     # Author(s)
     "addon_author": "Mohammed Khaled Mahmoud <mohammed.khaled.mahmoud1996@gmail.com>",
     # URL for the add-on documentation support
