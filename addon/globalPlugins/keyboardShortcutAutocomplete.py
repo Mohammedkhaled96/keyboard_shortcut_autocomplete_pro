@@ -109,7 +109,14 @@ class ShortcutData:
             "الحمدلله": "الحمد لله",
             "لااله": "لا إله إلا الله",
             "اللهم صل": "اللهم صل وسلم على نبينا محمد",
-            "استغفرالله": "استغفر الله العظيم",
+            "استغفرالله": "استغفر الله العظيم",            "sa": "selamun Aleyküm",
+            "as": "aleyküm selam",
+            "kg": "kolay gelsin",
+            "hg": "hoş geldin",
+            "hb": "hoş buldum",
+            "ao": "afiyet olsun",
+            "kib": "kendine iyi bak",
+            "tşk": "teşekkür ederim",
             "moh@": "mohammed.khaled.mahmoud1996@gmail.com"
         }
     
@@ -516,51 +523,7 @@ class TextExpander:
     
     @staticmethod
     def expand_text_smart(shortcut, expansion):
-        try:
-            focus = api.getFocusObject()
-            if not focus:
-                return False
-            
-            try:
-                info = focus.makeTextInfo(textInfos.POSITION_CARET)
-                line_info = info.copy()
-                line_info.expand(textInfos.UNIT_LINE)
-                line_text = line_info.text
-                
-                caret_pos = info._startOffset - line_info._startOffset
-                
-                if caret_pos <= len(line_text):
-                    before_caret = line_text[:caret_pos]
-                    
-                    word_match = re.search(r'\S+$', before_caret)
-                    if word_match and word_match.group() == shortcut:
-                        word_start = word_match.start()
-                        
-                        selection_info = line_info.copy()
-                        selection_info._startOffset = line_info._startOffset + word_start
-                        selection_info._endOffset = line_info._startOffset + caret_pos
-                        
-                        selection_info.updateSelection()
-                        time.sleep(0.05)
-                        
-                        old_clip = api.getClipData()
-                        api.copyToClip(expansion)
-                        time.sleep(0.05)
-                        keyboardHandler.KeyboardInputGesture.fromName("control+v").send()
-                        
-                        if old_clip is not None:
-                            wx.CallLater(200, lambda: api.copyToClip(old_clip))
-                        
-                        return True
-            
-            except:
-                pass
-            
-            return TextExpander.expand_text_fallback(shortcut, expansion)
-        
-        except Exception as e:
-            log.error(f"Error in smart text expansion: {e}")
-            return False
+        return TextExpander.expand_text_fallback(shortcut, expansion)
     
     @staticmethod
     def expand_text_fallback(shortcut, expansion):
@@ -580,9 +543,9 @@ class TextExpander:
                 wx.CallLater(200, lambda: api.copyToClip(old_clip))
             
             return True
-        
+            
         except Exception as e:
-            log.error(f"Error in fallback text expansion: {e}")
+            log.error(f"Error in text expansion fallback: {e}")
             return False
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
@@ -639,17 +602,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
                 line_text = line_info.text
                 
                 caret_pos = info._startOffset - line_info._startOffset
-                
                 if caret_pos <= len(line_text):
                     before_caret = line_text[:caret_pos]
-                    
                     word_match = re.search(r'\S+$', before_caret)
                     if word_match:
                         return word_match.group()
-            
             except:
                 pass
             
+            try:
+                if hasattr(focus, 'value') and focus.value:
+                    val = focus.value
+                    word_match = re.search(r'\S+$', val)
+                    if word_match:
+                        return word_match.group()
+            except:
+                pass
+
             try:
                 info = focus.makeTextInfo(textInfos.POSITION_CARET)
                 info.expand(textInfos.UNIT_WORD)
@@ -662,7 +631,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
             return None
             
         except Exception as e:
-            log.error(f"Error getting word at cursor: {e}")
+            log.debug(f"Word expand failed: {e}")
             return None
     
     @script(
@@ -685,7 +654,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
                 
                 dlg = ShortcutManagerDialog(gui.mainFrame, self.shortcut_data)
                 gui.runScriptModalDialog(dlg)
-                
+            
             except Exception as e:
                 log.error(f"Error opening manager: {e}")
                 ui.message("Error opening shortcuts manager")
@@ -798,7 +767,7 @@ class EnhancedEditField:
                 if words:
                     last_word = words[-1]
                     plugin = next((p for p in globalPluginHandler.runningPlugins 
-                                 if isinstance(p, GlobalPlugin)), None)
+                                   if isinstance(p, GlobalPlugin)), None)
                     if plugin and plugin.shortcut_data.is_enabled():
                         expansion = plugin.shortcut_data.get(last_word)
                         if expansion:
