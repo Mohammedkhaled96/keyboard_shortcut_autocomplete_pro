@@ -1,5 +1,11 @@
 # Keyboard Shortcut Autocomplete Professional for NVDA
 
+[![Build add-on](https://github.com/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro/actions/workflows/build.yml/badge.svg)](https://github.com/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro/actions/workflows/build.yml)
+[![Latest release](https://img.shields.io/github/v/release/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro?label=download)](https://github.com/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro/releases/latest)
+![NVDA](https://img.shields.io/badge/NVDA-2019.3%2B-5A2D82)
+![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-GPL%20v2-blue)
+
 Version: 1.1.2  
 Author: Mohammed Khaled Mahmoud <mohammed.khaled.mahmoud1996@gmail.com>  
 License: GNU GPL v2
@@ -20,7 +26,7 @@ Keyboard Shortcut Autocomplete Professional is a powerful text expansion addon f
 
 ## Installation
 
-1. Download the latest `.nvda-addon` file
+1. Download the latest `.nvda-addon` file from [Releases](https://github.com/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro/releases/latest)
 2. Open the file with NVDA running
 3. Follow the installation prompts
 4. Restart NVDA to activate the addon
