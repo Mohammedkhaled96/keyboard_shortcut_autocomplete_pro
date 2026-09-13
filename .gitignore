@@ -6,3 +6,6 @@ __pycache__/
 # Editors
 .vscode/
 .idea/
+
+# Built packages are published on GitHub Releases
+*.nvda-addon

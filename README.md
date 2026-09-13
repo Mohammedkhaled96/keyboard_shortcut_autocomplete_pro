@@ -6,7 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-GPL%20v2-blue)
 
-Version: 1.1.2  
+Version: 1.1.3  
 Author: Mohammed Khaled Mahmoud <mohammed.khaled.mahmoud1996@gmail.com>  
 License: GNU GPL v2
 
@@ -133,7 +133,15 @@ Works in most Windows applications including:
 
 Found a bug or have a suggestion? Please visit:
 https://github.com/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro
+
 ## Changelog
+
+### Version 1.1.3 (2026)
+- More reliable word detection in complex UIs: falls back to the focused control's value when caret text is unavailable ([#1](https://github.com/Mohammedkhaled96/keyboard_shortcut_autocomplete_pro/pull/1), thanks @Umit-Ulusoy)
+- Simplified expansion path that always uses the robust clipboard-based strategy
+- New Turkish default shortcuts (`sa`, `as`, `kg`, `hg`, `hb`, `ao`, `kib`, `tşk`)
+- Quieter logging when word detection fails
+- Packaged builds are now published on GitHub Releases
 
 ### Version 1.1.1 (2025)
 - Complete rewrite with professional interface

@@ -1,6 +1,6 @@
 # Keyboard Shortcut Autocomplete Professional for NVDA
 
-Version: 1.1.2  
+Version: 1.1.3  
 Author: Mohammed Khaled Mahmoud <mohammed.khaled.mahmoud1996@gmail.com>  
 License: GNU GPL v2
 
