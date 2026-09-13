@@ -1,0 +1,60 @@
+name: Build add-on
+
+on:
+  push:
+    branches: [keyboard_shortcut_autocomplete_pro, main]
+    tags: ['v*', '[0-9]*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Lint & package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Syntax check
+        run: python -m compileall -q addon build.py buildVars.py
+
+      - name: Lint (errors only)
+        run: |
+          pip install flake8
+          flake8 addon build.py buildVars.py --select=E9,F63,F7,F82 --builtins=_ --show-source --statistics
+
+      - name: Package .nvda-addon
+        run: python build.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nvda-addon
+          path: '*.nvda-addon'
+
+  release:
+    name: Publish release
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: nvda-addon
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: '*.nvda-addon'
+          generate_release_notes: true
